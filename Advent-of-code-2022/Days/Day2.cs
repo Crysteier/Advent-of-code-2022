@@ -6,17 +6,12 @@ using System.Threading.Tasks;
 
 namespace Advent_of_code_2022.Days
 {
-    public class Day2 : BaseDay
+    public class Day2 : BaseDay, IDay
     {
-        private string[] input;
-        public Day2(string inputPath) : base(inputPath)
-        {
-            input = File.ReadAllLines(inputPath);
-        }
+        public Day2(string inputPath) : base(inputPath) { }
 
-        public void SolvePart1()
+        public void SolvePuzzlePart1()
         {
-
             int score = 0;
 
             foreach (var part in input)
@@ -76,11 +71,10 @@ namespace Advent_of_code_2022.Days
                         break;
                 }
             }
-            Console.WriteLine(score);
-
+            Console.WriteLine("Part 1 solution: " + score);
         }
 
-        public void SolvePart2()
+        public void SolvePuzzlePart2()
         {
             int score = 0;
 
@@ -141,7 +135,14 @@ namespace Advent_of_code_2022.Days
                         break;
                 }
             }
-            Console.WriteLine(score);
+            Console.WriteLine("Part 2 solution: "+score);
+        }
+
+        public void SolvePuzzles()
+        {
+            Console.WriteLine("Day2");
+            SolvePuzzlePart1();
+            SolvePuzzlePart2();
         }
     }
 

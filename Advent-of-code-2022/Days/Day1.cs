@@ -7,16 +7,11 @@ using System.Threading.Tasks;
 
 namespace Advent_of_code_2022.Day1
 {
-    public class Day1 : BaseDay
+    public class Day1 : BaseDay, IDay
     {
-        private string[] input;
         private List<int> elfAllCalories = new List<int>();
-        public Day1(string inputPath) : base(inputPath)
-        {
-            input = File.ReadAllLines(inputPath);
-        }
-
-        public void SolveDayProblem1()
+        public Day1(string inputPath) : base(inputPath) { }
+        public void SolvePuzzlePart1()
         {
             int calories;
             int sumCalories = 0;
@@ -33,16 +28,22 @@ namespace Advent_of_code_2022.Day1
                 }
             }
             Console.WriteLine("Problem 1 solution: " + elfAllCalories.Max());
-            SolveDayProblem2();
         }
 
-        public void SolveDayProblem2()
+        public void SolvePuzzlePart2()
         {
             int topThreeSum = 0;
             topThreeSum += elfAllCalories.Select(x => x).OrderDescending().First();
             topThreeSum += elfAllCalories.Select(x => x).OrderDescending().Skip(1).First();
             topThreeSum += elfAllCalories.Select(x => x).OrderDescending().Skip(2).First();
             Console.WriteLine("Problem 2 solution: " + topThreeSum);
+        }
+
+        public void SolvePuzzles()
+        {
+            Console.WriteLine("Day1");
+            SolvePuzzlePart1();
+            SolvePuzzlePart2();
         }
     }
 }
