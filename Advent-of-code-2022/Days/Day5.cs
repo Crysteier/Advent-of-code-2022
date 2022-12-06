@@ -97,6 +97,7 @@ namespace Advent_of_code_2022.Days
                 commands.Add(nums);
             }
             //I am too lazy to make this work properly so you need to have one commented out otherwise it will not work
+            //fucking dictionaries not working properly
             //SolvePuzzlePart1();
             SolvePuzzlePart2();
         }
