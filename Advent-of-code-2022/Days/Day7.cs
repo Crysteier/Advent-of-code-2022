@@ -13,14 +13,14 @@ namespace Advent_of_code_2022.Days
 
         public void SolvePuzzlePart1()
         {
-            Console.WriteLine(GetDirectorySizes().Where(size => size < 100_000).Sum());
+            Console.WriteLine("Part 1 solution: " + GetDirectorySizes().Where(size => size < 100_000).Sum());
         }
 
         public void SolvePuzzlePart2()
         {
             var directorySizes = GetDirectorySizes();
             var freeSpace = 70_000_000 - directorySizes.Max();
-            Console.WriteLine(directorySizes.Where(size => size + freeSpace >= 30_000_000).Min());
+            Console.WriteLine("Part 2 solution: " + directorySizes.Where(size => size + freeSpace >= 30_000_000).Min());
         }
 
         public void SolvePuzzles()
